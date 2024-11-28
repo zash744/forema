@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "balloons.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="textbox">
+        <p>GO SHAWTY ITS UR BIRTHDAY!!! OMG U ALWAYS LOOK HOT BUT THAT DRESS HAD U LOOKING LIKE OOOOOOOOOOOH MY LORDY LORRDDDDDDD. IT WAS 
+            SO HARD TO WALK BEHIND U WHEN U WENT UP THE STAIRS SHAWTYYYYY.  
+        </p>
+        <p>GOSH YOU LOOKED SO BEAUTIFUL MASHALLAH. YOU HAVE NO RIGHT TO FEEL
+            INSECURE BC MY LORD U ARE FINE AND YOU ARE THE FINEST WOMAN IN THE WORLD WALLAHI. GOD DAMNNNNNNNNNNNNNN!</p>
+
+            <p>I HAD A LOT OF FUN ON YOUR 
+                BIRTHDAY, YOUR FAMILY LOVED ME TOOOOO. GOSH I JUST CANT GET OVER HOW BEAUTFUL YOU LOOKED, JUST SO ELEGANT LOOKING LIKE A WOWOWOWOWOOWOWOWOWOW.</p>
+            <p>You are so attractive, lovely, stunning, gorgeous, pretty, elegant, radiant, alluring, charming, exquisite, striking, captivating, magnificent, 
+                dazzling, graceful, splendid, divine, fair, glamorous, mesmerizing, sublime, enchanting, fetching, ravishing, beauteous, aestheticly pleasing, 
+                resplendent, delightful, appealing, prepossessing, bewitching, comely, luscious, pulchritudinous, winsome, adorable, angelic, picturesque, harmonious, 
+                ethereal, breathtaking, classy, fascinating, cute, neat, and dreamy. I love you so much baby</p>
+
+    </div>
+    <script>
+        document.addEventListener('mousemove', function(e){
+            var body = document.querySelector('body');
+            var balloon = document.createElement("span");
+            var x = e.offsetX;
+            var y = e.offsetY;
+            balloon.style.left = x + 'px';
+            balloon.style.top = y + 'px';
+            var size = Math.random() * 100;
+            balloon.style.width = 10 + size + 'px';
+            balloon.style.height = 10 + size + 'px';
+            body.appendChild(balloon)
+        })
+
+        setTimeout(function(){
+            balloon.remove();
+        }, 1500)
+    </script>
+    
+</body>
+</html>

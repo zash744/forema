@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    background:  linear-gradient(to right, #760307, #0f2027); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.textbox {
+    width: 50%;
+    max-width: 600px;
+    height: 70%;
+    max-height: 500px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allows the box to scroll if the text overflows */
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+}
+
+span {
+    position: absolute;
+    background: url('heart3.png');
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -1000%);
+        opacity: 0;
+        filter: hue-rotate(720deg);
+    }
+}
