@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Christmas Themed</title>
+  <style>
+    /* Overall page styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      /* Christmas gradient background from the start */
+      background: linear-gradient(120deg, #7a0000, #fa0101, #1a7d1a, #004200);
+      /* We'll handle the audio on user click */
+      cursor: pointer; /* So it feels clickable anywhere */
+    }
+
+    /* Center container vertically & horizontally */
+    #contentContainer {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      position: relative; /* so we can position the prompt text */
+    }
+
+    /* Merry Christmas heading */
+    #title {
+      font-size: 2em;
+      font-weight: bold;
+      color: #fff;
+      margin: 0;
+    }
+
+    /* Circular Snoopy GIF */
+    #christmasGif {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* A styled box for a non-editable message */
+    #textBox {
+      background-color: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      width: 250px;
+      font-size: 1em;
+      color: #333;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin: 0;
+    }
+
+    /* Prompt telling the user to click for audio */
+    #clickPrompt {
+      position: absolute;
+      bottom: 20px;
+      color: #fff;
+      font-size: 1em;
+      background: rgba(0,0,0,0.3);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="contentContainer">
+    <h1 id="title">MERRY CHRISTMAS EMA!</h1>
+    <img
+      id="christmasGif"
+      src="https://media.tenor.com/YrGO6loYH6gAAAAM/snoopy-charlie-brown.gif"
+      alt="Christmas GIF"
+    />
+    <!-- This div visually mimics a textbox but is not editable by the user -->
+    <div id="textBox">
+      Everyday is Christmas to me, I have the greatest gift in the world. I hope you have an amazing Christmas. I love you so much. You are a gift
+      to the world, you are the most amazing girl in the entire world. I am honored and grateful that I am in your life. You are so amazing to me and 
+      I will forever thank God for having our paths cross. Enjoy your Christmas!
+    </div>
+    <div id="clickPrompt">Click anywhere to enable audio</div>
+  </div>
+
+  <!-- Start muted + autoplay. We'll unmute and play once user clicks anywhere. -->
+  <audio
+    id="christmasMusic"
+    src="xmas.mp4"
+    muted
+    autoplay
+    loop
+  ></audio>
+
+  <script>
+    // Once the user clicks anywhere on the page, unmute and play the audio.
+    function enableAudio() {
+      const audio = document.getElementById('christmasMusic');
+      // Unmute the audio
+      audio.muted = false;
+      // Attempt to play
+      audio.play().catch(err => console.warn("Play blocked:", err));
+
+      // Hide the prompt text
+      const prompt = document.getElementById('clickPrompt');
+      if (prompt) prompt.style.display = 'none';
+
+      // Remove this event listener so it doesn't run multiple times
+      window.removeEventListener('click', enableAudio);
+    }
+
+    // Listen for the first click anywhere in the window
+    window.addEventListener('click', enableAudio);
+  </script>
+</body>
+</html>
