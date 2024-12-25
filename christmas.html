@@ -9,10 +9,8 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      /* Christmas gradient background from the start */
-      background: linear-gradient(120deg, #7a0000, #fa0101, #1a7d1a, #004200);
-      /* We'll handle the audio on user click */
-      cursor: pointer; /* So it feels clickable anywhere */
+      background-color: #eca4cb; /* so we can position the prompt text */
+      cursor: pointer; 
     }
 
     /* Center container vertically & horizontally */
@@ -25,7 +23,7 @@
       align-items: center;
       text-align: center;
       gap: 20px;
-      position: relative; /* so we can position the prompt text */
+      position: relative;
     }
 
     /* Merry Christmas heading */
@@ -38,10 +36,11 @@
 
     /* Circular Snoopy GIF */
     #christmasGif {
-      width: 200px;
-      height: 200px;
+      width: 230px;
+      height: 170px;
       border-radius: 50%;
       object-fit: cover;
+      border: 0;
     }
 
     /* A styled box for a non-editable message */
